@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Happy Birthday, Aulia!</title>
+	<link rel="stylesheet" href="styler.css">
+</head>
+<body>
+	<main class="progress-page" id="progressPage">
+		<section class="progress-card" aria-labelledby="progress-title">
+			<p class="eyebrow">A little adventure awaits</p>
+			<img class="birthday-logo" src="asset/hb.png" alt="Happy Birthday">
+			<h1 id="progress-title">Progress</h1>
+			<div class="progress-heading">
+				<span class="heading-dot" aria-hidden="true"></span>
+				<span>Get ready to play</span>
+				<span class="heading-dot" aria-hidden="true"></span>
+			</div>
+			<div class="progress-wrap">
+				<div class="progress-track" id="progressTrack" aria-hidden="true">
+					<div class="progress-fill" id="progressFill"></div>
+				</div>
+				<div class="toy-knob" id="toyKnob">
+					<img id="toyImage" src="asset/Group 21.png" alt="Karakter pengatur progress">
+				</div>
+				<input id="progressSlider" class="progress-slider" type="range" min="0" max="100" value="0" aria-label="Atur progress">
+			</div>
+			<div class="progress-labels" aria-hidden="true">
+				<span>Start</span>
+				<span>Adventure</span>
+				<span>Finish</span>
+			</div>
+			<output id="progressValue" class="progress-value" for="progressSlider">0%</output>
+			<p class="progress-hint">Geser karakter ke kanan untuk menuju halaman selanjutnya</p>
+		</section>
+	</main>
+
+	<section class="birthday-page" id="birthdayPage" aria-labelledby="birthday-title" aria-hidden="true">
+		<div class="confetti" id="confetti" aria-hidden="true"></div>
+		<div class="balloon balloon-yellow" aria-hidden="true"></div>
+		<div class="balloon balloon-red" aria-hidden="true"></div>
+		<div class="balloon balloon-blue" aria-hidden="true"></div>
+		<div class="cowhide cowhide-left" aria-hidden="true"></div>
+		<div class="cowhide cowhide-right" aria-hidden="true"></div>
+		<div class="corner-sun" aria-hidden="true"></div>
+		<div class="birthday-content">
+			<p class="birthday-kicker">A special day for someone special</p>
+			<h2 id="birthday-title">Happy Birthday,<br><span>Aulia!</span></h2>
+			<div class="birthday-divider" aria-hidden="true"><span>✦</span></div>
+			<div class="details">
+				<div class="detail-card">
+					<span class="detail-icon">🎂</span>
+					<strong>Umur</strong>
+					<span>21 tahun</span>
+				</div>
+				<div class="detail-card">
+					<span class="detail-icon">📅</span>
+					<strong>Hari ulang tahun</strong>
+					<span>7 Oktober 2026</span>
+				</div>
+			</div>
+			<p class="birthday-message">Hari ini bukan cuma tentang bertambahnya umur,<br class="desktop-only"> tapi tentang merayakan seseorang yang punya tempat spesial di hidup gue.</p>
+			<p class="signature">Semoga semua hal baik datang kepadamu, Aulia. <span>♡</span></p>
+		</div>
+		<button class="replay-button" id="replayButton" type="button">↺ Ulangi kejutan</button>
+	</section>
+	<section class="memories-section" id="memoriesSection" aria-labelledby="memories-title" aria-hidden="true">
+		<div class="memory-tape memory-tape-left" aria-hidden="true"></div>
+		<div class="memory-tape memory-tape-right" aria-hidden="true"></div>
+		<div class="memory-tape memory-tape-top" aria-hidden="true"></div>
+		<div class="memory-tape memory-tape-middle" aria-hidden="true"></div>
+		<div class="memory-tape memory-tape-bottom" aria-hidden="true"></div>
+		<div class="memories-header">
+			<p class="memories-kicker">Roll the good times</p>
+			<h2 id="memories-title">Our Little <span>Memories</span></h2>
+			<p>Beberapa potongan kecil yang selalu bikin senyum sendiri.</p>
+		</div>
+		<div class="memory-gallery" aria-label="Galeri kenangan">
+			<article class="polaroid polaroid-one">
+				<div class="memory-photo photo-sky" tabindex="0" role="button" aria-label="Buka foto kenangan 1"><img src="foto/foto1.jpg" alt="Sketsa Aulia memakai topi dan kacamata"></div>
+				<p>“Pertama kali kita ketemu.”</p>
+				<small>memory 01</small>
+			</article>
+			<article class="polaroid polaroid-two">
+				<div class="memory-photo photo-lime" tabindex="0" role="button" aria-label="Buka foto kenangan 2"><img src="foto/foto2.jpg" alt="Sketsa karakter dengan rambut pendek dan headphone"></div>
+				<p>“Momen paling random.”</p>
+				<small>memory 02</small>
+			</article>
+			<article class="polaroid polaroid-three">
+				<div class="memory-photo photo-red" tabindex="0" role="button" aria-label="Buka foto kenangan 3"><img src="foto/foto3.jpg" alt="Sketsa karakter dengan pose tangan di wajah"></div>
+				<p>“Yang ini jangan ditanya, malu anjir.”</p>
+				<small>memory 03</small>
+			</article>
+			<article class="polaroid polaroid-four">
+				<div class="memory-photo photo-purple" tabindex="0" role="button" aria-label="Buka foto kenangan 4"><img src="foto/foto4.jpg" alt="Sketsa karakter tersenyum di buku gambar"></div>
+				<p>“Ketawa sampai lupa waktu.”</p>
+				<small>memory 04</small>
+			</article>
+			<article class="polaroid polaroid-five">
+				<div class="memory-photo photo-cream" tabindex="0" role="button" aria-label="Buka foto kenangan 5"><img src="foto/foto5.jpg" alt="Sketsa karakter dengan ekspresi serius"></div>
+				<p>“Satu hari, seribu cerita.”</p>
+				<small>memory 05</small>
+			</article>
+			<article class="polaroid polaroid-six">
+				<div class="memory-photo photo-blue" tabindex="0" role="button" aria-label="Buka foto kenangan 6"><img src="foto/foto6.jpg" alt="Ilustrasi berwarna dua karakter anime"></div>
+				<p>“Semoga ada banyak lagi.”</p>
+				<small>memory 06</small>
+			</article>
+		</div>
+		<p class="gallery-note">Geser untuk melihat semua kenangan <span>→</span></p>
+	</section>
+	<div class="photo-modal" id="photoModal" aria-hidden="true">
+		<div class="photo-modal-backdrop" data-close-photo-modal></div>
+		<div class="buzz-frame" role="dialog" aria-modal="true" aria-labelledby="photoModalTitle">
+			<div class="buzz-frame-top" aria-hidden="true"><span>✦</span><b>SPACE RANGER</b><span>✦</span></div>
+			<div class="buzz-frame-window">
+				<img id="photoModalImage" src="" alt="">
+			</div>
+			<div class="buzz-frame-bottom">
+				<strong id="photoModalTitle">Memory from Star Command</strong>
+				<button class="photo-modal-close" id="photoModalClose" type="button" aria-label="Tutup foto">×</button>
+			</div>
+		</div>
+	</div>
+	<section class="long-message-section" id="longMessageSection" aria-labelledby="long-message-title" aria-hidden="true">
+		<div class="letter-spark letter-spark-one" aria-hidden="true">✦</div>
+		<div class="letter-spark letter-spark-two" aria-hidden="true">✦</div>
+		<div class="frog-letter">
+			<div class="frog-device" role="img" aria-label="Tablet berbentuk katak hijau">
+				<div class="frog-body"></div>
+				<div class="frog-face">
+					<span class="frog-nostril frog-nostril-left"></span>
+					<span class="frog-nostril frog-nostril-right"></span>
+					<span class="frog-smile"></span>
+				</div>
+				<div class="frog-eye frog-eye-left"><span></span></div>
+				<div class="frog-eye frog-eye-right"><span></span></div>
+				<div class="frog-speckles frog-speckles-left"></div>
+				<div class="frog-speckles frog-speckles-right"></div>
+				<div class="frog-screen"></div>
+				<div class="frog-hand frog-hand-tl" style="left:4.5%;top:29.5%"><i></i><i></i><i></i></div>
+				<div class="frog-hand frog-hand-tr" style="right:4.5%;top:29.5%"><i></i><i></i><i></i></div>
+				<div class="frog-hand frog-hand-bl" style="left:4.5%;bottom:7.5%"><i></i><i></i><i></i></div>
+				<div class="frog-hand frog-hand-br" style="right:4.5%;bottom:7.5%"><i></i><i></i><i></i></div>
+				<div class="frog-stand" aria-hidden="true"></div>
+			</div>
+			<div class="frog-letter-content">
+				<p class="letter-kicker">A little something from my heart</p>
+				<h2 id="long-message-title">A Letter <span>For You</span></h2>
+				<div class="letter-divider" aria-hidden="true"><span>✦</span></div>
+				<p class="letter-instruction">Sebuah surat kecil yang ditulis khusus untukmu.</p>
+				<div class="editable-letter" aria-label="Isi surat">
+					<p>Di hari spesial ini, gue cuma mau bilang terima kasih karena selama ini kamu selalu hadir dan bikin hari-hari biasa terasa jauh lebih berarti.</p>
+					<p>Semoga di umur yang baru ini, semua hal baik datang menghampiri kamu. Jangan lupa bahagia, jangan berhenti bermimpi, dan tetap jadi diri kamu yang paling keren.</p>
+					<p>Dengan penuh sayang,<br><strong>— seseorang yang selalu mendoakanmu ♡</strong></p>
+				</div>
+				<p class="letter-footer">Tulis dari hati, simpan sebagai kenangan.</p>
+			</div>
+		</div>
+	</section>
+	<script src="script.js"></script>
+</body>
+</html>
