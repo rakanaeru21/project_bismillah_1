@@ -1,3 +1,33 @@
+const surpriseModal = document.getElementById('surpriseModal');
+const surpriseCloseBtn = document.getElementById('surpriseCloseBtn');
+const surpriseBackdrop = document.getElementById('surpriseModalBackdrop');
+const surpriseEnvelope = document.getElementById('surpriseEnvelope');
+const bgMusic = document.getElementById('backgroundMusic');
+
+function triggerMusicOnFullProgress() {
+    if (bgMusic && bgMusic.paused) {
+        bgMusic.volume = 0.5;
+        bgMusic.play().catch(err => {
+            console.log('Autoplay blocked:', err);
+        });
+    }
+}
+
+surpriseEnvelope?.addEventListener('click', () => {
+    surpriseEnvelope.classList.add('is-open');
+});
+
+function openSurprise(){
+  surpriseModal.setAttribute('aria-hidden','false');
+  surpriseModal.classList.add('is-open');
+  surpriseEnvelope.classList.remove('is-open');
+}
+function closeSurprise(){
+  surpriseModal.setAttribute('aria-hidden','true');
+  surpriseModal.classList.remove('is-open');
+}
+surpriseCloseBtn?.addEventListener('click',closeSurprise);
+surpriseBackdrop?.addEventListener('click',closeSurprise);
 const slider = document.querySelector("#progressSlider");
 const fill = document.querySelector("#progressFill");
 const knob = document.querySelector("#toyKnob");
@@ -136,6 +166,7 @@ function updateProgress() {
 	if (progress === 100) {
 		clearTimeout(revealTimer);
 		revealTimer = setTimeout(showBirthday, 450);
+		triggerMusicOnFullProgress();
 	}
 }
 
@@ -242,7 +273,17 @@ function initAlienFloating() {
 		alien.style.transition = "none";
 		alien.style.animation = "none";
 
-		alienStates.push({ el: alien, x: startX, y: startY, vx, vy });
+		const rotation = Math.random() * 360;
+		const rotationSpeed = (Math.random() - 0.5) * 2; // -1 to 1 degrees per frame
+		const state = { el: alien, x: startX, y: startY, vx, vy, rotation, rotationSpeed, isPaused: false };
+		
+		alien.addEventListener("click", () => {
+			state.isPaused = !state.isPaused;
+			const allPaused = alienStates.every(s => s.isPaused);
+			if (allPaused) openSurprise();
+		});
+
+		alienStates.push(state);
 	});
 
 	function tick() {
@@ -259,16 +300,19 @@ function initAlienFloating() {
 			const minY = - (trioRect.top - containerRect.top);
 			const maxY = containerRect.height - (trioRect.top - containerRect.top) - alienH;
 
-			s.x += s.vx;
-			s.y += s.vy;
+			if (!s.isPaused) {
+				s.x += s.vx;
+				s.y += s.vy;
 
-			if (s.x <= minX) { s.x = minX; s.vx *= -1; }
-			else if (s.x >= maxX) { s.x = maxX; s.vx *= -1; }
+				if (s.x <= minX) { s.x = minX; s.vx *= -1; }
+				else if (s.x >= maxX) { s.x = maxX; s.vx *= -1; }
 
-			if (s.y <= minY) { s.y = minY; s.vy *= -1; }
-			else if (s.y >= maxY) { s.y = maxY; s.vy *= -1; }
+				if (s.y <= minY) { s.y = minY; s.vy *= -1; }
+				else if (s.y >= maxY) { s.y = maxY; s.vy *= -1; }
 
-			s.el.style.transform = `translate(${s.x}px, ${s.y}px)`;
+				s.rotation = (s.rotation + s.rotationSpeed) % 360;
+			}
+			s.el.style.transform = `translate(${s.x}px, ${s.y}px) rotate(${s.rotation}deg)`;
 		});
 		alienFloatAnimId = requestAnimationFrame(tick);
 	}

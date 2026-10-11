@@ -160,6 +160,9 @@
 		</div>
 	</section>
 	<section class="space-section" id="spaceSection" aria-labelledby="space-title" aria-hidden="true">
+		<button id="musicToggle" class="music-toggle" aria-label="Toggle Music">
+			<span class="icon">🎵</span>
+		</button>
 		<div class="space-background">
 			<div class="stars"></div>
 			<div class="planets">
@@ -173,7 +176,7 @@
 			</div>
 		</div>
 		<div class="space-content">
-			<h2 id="space-title">Journey <span>Among Stars</span></h2>
+			<h2 id="space-title">Click on the <span>three aliens</span></h2>
 			<div class="alien-trio" aria-label="Tiga alien Toy Story">
 				<!-- Alien 1: Woody -->
 				<div class="alien alien-woody">
@@ -244,6 +247,32 @@
 			</div>
 		</div>
 	</section>
+
+	<!-- Surprise Envelope Modal -->
+	<div class="envelope-modal" id="surpriseModal" aria-hidden="true">
+		<div class="envelope-backdrop" id="surpriseModalBackdrop"></div>
+		<div class="envelope-wrapper">
+			<div class="envelope" id="surpriseEnvelope">
+				<div class="envelope-flap"></div>
+				<div class="envelope-body">
+					<div class="envelope-seal">✉️</div>
+				</div>
+				<div class="envelope-letter" id="surpriseLetter">
+					<button type="button" class="envelope-close" id="surpriseCloseBtn" aria-label="Tutup kejutan">&times;</button>
+					<h3>Kejutan Terakhir! 🎉</h3>
+					<div class="surprise-content">
+						<img src="foto/foto1.jpg" alt="Kejutan Foto" class="surprise-media" />
+						<p>Terima kasih sudah mengikuti petualangan ini! Semoga hari-harimu penuh kebahagiaan! ✨</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+
+	<audio id="backgroundMusic" loop>
+		<source src="asset/toystory.mp3" type="audio/mpeg">
+	</audio>
 	<script src="script.js"></script>
 </body>
 </html>
